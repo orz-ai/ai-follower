@@ -1,6 +1,9 @@
 # AI News Aggregator
+![](Snipaste.png)
 
 一个简单的 AI 新闻聚合器，自动抓取 RSS 源并提供搜索过滤。
+
+地址：https://ainews.orz.ai
 
 ## 运行
 
