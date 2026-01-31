@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_SC, Space_Grotesk } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -59,9 +60,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="zh-CN">
       <body className={`${spaceGrotesk.variable} ${notoSansSC.variable}`}>
+        {gaId && <GoogleAnalytics gaId={gaId} />}
         {children}
       </body>
     </html>
