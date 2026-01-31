@@ -1,0 +1,12 @@
+services:
+  ainews:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/news.db
+      - ENABLE_SCHEDULER=true
+      - NEWS_FETCH_INTERVAL_HOURS=2
+    restart: unless-stopped

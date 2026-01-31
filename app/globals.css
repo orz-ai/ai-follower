@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #f6f1ea;
+  --fg: #0b0f14;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  color: var(--fg);
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(121, 212, 255, 0.25), transparent 60%),
+    radial-gradient(900px 700px at 110% 10%, rgba(215, 214, 255, 0.35), transparent 55%),
+    radial-gradient(600px 500px at 40% 90%, rgba(255, 181, 157, 0.3), transparent 60%),
+    #f6f1ea;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+}
+
+::selection {
+  background: #1c2430;
+  color: #f6f1ea;
+}
+
+.card-sheen {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.15));
+}
+
+/* Stabilize cards with backdrop-filter during scroll (Chrome/Edge) */
+.news-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* 自定义滚动条样式 - 与页面风格统一 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(246, 241, 234, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b6b6b6 0%, #9a9a9a 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(246, 241, 234, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a3a3a3 0%, #8a8a8a 100%);
+}
+
+/* Firefox 滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #9a9a9a rgba(246, 241, 234, 0.3);
+}
+
+/* Select 下拉框样式美化 */
+select {
+  border-radius: 16px !important;
+}
+
+/* 美化 select 的下拉面板和选项 */
+select option {
+  padding: 12px 16px;
+  background-color: #ffffff;
+  color: #0b0f14;
+  font-size: 15px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  transition: all 0.15s ease;
+}
+
+select option:checked,
+select option:focus {
+  background: linear-gradient(135deg, #79d4ff 0%, #a5e3ff 100%);
+  color: #0b0f14;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(121, 212, 255, 0.4);
+}
+
+select option:hover {
+  background: linear-gradient(135deg, #d7ffb8 0%, #e8ffcc 100%);
+  color: #0b0f14;
+  font-weight: 500;
+}
+
+/* Webkit 浏览器下拉面板美化 */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: rgba(246, 241, 234, 0.5);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b6b6b6 0%, #9a9a9a 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a3a3a3 0%, #8a8a8a 100%);
+}
+
+/* 自定义下拉组件的滚动条样式 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(246, 241, 234, 0.3);
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b6b6b6 0%, #9a9a9a 100%);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a3a3a3 0%, #8a8a8a 100%);
+}
+
+/* 下拉框淡入动画 */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name": "ainews",
+            "script": "node_modules/next/dist/bin/next",
+            "args": "start",
+            "cwd": "/www/wwwroot/ainews",
+            "env": {
+                "NODE_ENV": "production",
+                "PORT": "3000"
+            }
+        }
+    ]
+}
