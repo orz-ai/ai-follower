@@ -50,6 +50,7 @@ export async function fetchRss({
 
 export async function collectOnce() {
   const sources = loadSources();
+  console.log("[collector] start collecting from", sources.length, "sources");
   let inserted = 0;
   for (const source of sources) {
     if (source.enabled === false) continue;
@@ -61,9 +62,11 @@ export async function collectOnce() {
         category: source.category
       });
       inserted += upsertNews(items);
+      console.log(`[collector] ${source.name}: fetched ${items.length} items`);
     } catch (error) {
       console.warn("[collector] failed", source.name, source.url, error);
     }
   }
+  console.log("[collector] finished, total inserted:", inserted);
   return inserted;
 }

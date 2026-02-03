@@ -28,13 +28,6 @@
     "enabled": true
   },
   {
-    "name": "Meta AI Blog",
-    "url": "https://ai.meta.com/blog/rss/",
-    "language": "en",
-    "category": "official",
-    "enabled": true
-  },
-  {
     "name": "Microsoft AI Blog",
     "url": "https://blogs.microsoft.com/ai/feed/",
     "language": "en",
@@ -63,13 +56,6 @@
     "enabled": true
   },
   {
-    "name": "Anthropic News",
-    "url": "https://www.anthropic.com/news/rss.xml",
-    "language": "en",
-    "category": "official",
-    "enabled": true
-  },
-  {
     "name": "TechCrunch AI",
     "url": "https://techcrunch.com/tag/artificial-intelligence/feed/",
     "language": "en",
@@ -84,22 +70,8 @@
     "enabled": true
   },
   {
-    "name": "The Verge AI",
-    "url": "https://www.theverge.com/artificial-intelligence/rss/index.xml",
-    "language": "en",
-    "category": "media",
-    "enabled": true
-  },
-  {
     "name": "Wired AI",
     "url": "https://www.wired.com/feed/tag/ai/latest/rss",
-    "language": "en",
-    "category": "media",
-    "enabled": true
-  },
-  {
-    "name": "MIT News AI",
-    "url": "https://news.mit.edu/rss/topic/artificial-intelligence",
     "language": "en",
     "category": "media",
     "enabled": true
@@ -119,20 +91,6 @@
     "enabled": true
   },
   {
-    "name": "AI科技评论",
-    "url": "https://www.leiphone.com/category/ai/feed",
-    "language": "zh",
-    "category": "media",
-    "enabled": true
-  },
-  {
-    "name": "PaperWeekly",
-    "url": "https://paperweekly.site/rss",
-    "language": "zh",
-    "category": "research",
-    "enabled": true
-  },
-  {
     "name": "Towards Data Science",
     "url": "https://towardsdatascience.com/feed",
     "language": "en",
@@ -149,13 +107,6 @@
   {
     "name": "BAIR Blog",
     "url": "https://bair.berkeley.edu/blog/feed.xml",
-    "language": "en",
-    "category": "research",
-    "enabled": true
-  },
-  {
-    "name": "OpenReview Announcements",
-    "url": "https://openreview.net/rss",
     "language": "en",
     "category": "research",
     "enabled": true
@@ -196,13 +147,6 @@
     "enabled": true
   },
   {
-    "name": "Hacker News AI",
-    "url": "https://hnrss.org/newest?q=AI+OR+LLM+OR+GPT",
-    "language": "en",
-    "category": "media",
-    "enabled": true
-  },
-  {
     "name": "36氪",
     "url": "https://36kr.com/feed",
     "language": "zh",
@@ -220,6 +164,111 @@
     "name": "雷峰网",
     "url": "https://www.leiphone.com/feed",
     "language": "zh",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "arXiv cs.AI",
+    "url": "http://export.arxiv.org/rss/cs.AI",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "arXiv cs.LG",
+    "url": "http://export.arxiv.org/rss/cs.LG",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "arXiv cs.NE",
+    "url": "http://export.arxiv.org/rss/cs.NE",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "arXiv cv.CV",
+    "url": "http://export.arxiv.org/rss/cs.CV",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "Microsoft Research",
+    "url": "https://www.microsoft.com/en-us/research/blog/feed/",
+    "language": "en",
+    "category": "official",
+    "enabled": true
+  },
+  {
+    "name": "Stanford AI Lab",
+    "url": "https://ai.stanford.edu/blog/feed.xml",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "Andrej Karpathy Blog",
+    "url": "https://karpathy.github.io/feed.xml",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "Distill Pub",
+    "url": "https://distill.pub/rss.xml",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "Google Tensorflow Blog",
+    "url": "https://blog.tensorflow.org/rss.xml",
+    "language": "en",
+    "category": "official",
+    "enabled": true
+  },
+  {
+    "name": "MIT Technology Review AI",
+    "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+    "language": "en",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "The Gradient",
+    "url": "https://thegradient.pub/rss/",
+    "language": "en",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "AI News",
+    "url": "https://artificialintelligence-news.com/feed/",
+    "language": "en",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "Ars Technica AI",
+    "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+    "language": "en",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "Analytics Vidhya",
+    "url": "https://www.analyticsvidhya.com/blog/feed/",
+    "language": "en",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "KDnuggets",
+    "url": "https://www.kdnuggets.com/feed",
+    "language": "en",
     "category": "media",
     "enabled": true
   }

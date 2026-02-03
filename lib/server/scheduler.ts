@@ -23,6 +23,7 @@ export function startScheduler() {
   if (state.started) return;
 
   if ((process.env.ENABLE_SCHEDULER || "true").toLowerCase() !== "true") {
+    console.log("[scheduler] disabled by environment variable");
     return;
   }
 
@@ -30,9 +31,11 @@ export function startScheduler() {
   const intervalMs = Math.max(1, intervalHours) * 60 * 60 * 1000;
 
   state.started = true;
+  console.log("[scheduler] started, interval:", intervalHours, "hours");
 
   void collectOnce();
   state.intervalId = setInterval(() => {
+    console.log(`[scheduler] running at ${new Date().toISOString()}`);
     void collectOnce();
   }, intervalMs);
 }
