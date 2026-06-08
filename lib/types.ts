@@ -26,6 +26,7 @@ export type SourceItem = {
 
 export type Stats = {
     total_news: number;
+    last_collected_at?: string | null;
 };
 
 export type NewsQuery = {

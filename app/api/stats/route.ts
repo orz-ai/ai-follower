@@ -1,9 +1,17 @@
 import { NextResponse } from "next/server";
 
-import { countNews } from "../../../lib/server/news";
+import { getStats } from "../../../lib/server/news";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-  return NextResponse.json({ total_news: countNews() });
+  return NextResponse.json(
+    getStats(),
+    {
+      headers: {
+        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+      }
+    }
+  );
 }

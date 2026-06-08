@@ -3,6 +3,7 @@ import "server-only";
 import Parser from "rss-parser";
 
 import type { NewsInput } from "../types";
+import { setMeta } from "./db";
 import { upsertNews } from "./news";
 import { loadSources } from "./sources";
 
@@ -67,6 +68,8 @@ export async function collectOnce() {
       console.warn("[collector] failed", source.name, source.url, error);
     }
   }
+  const finishedAt = new Date().toISOString();
+  setMeta("last_collect_finished_at", finishedAt);
   console.log("[collector] finished, total inserted:", inserted);
   return inserted;
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NewsExplorer from "../components/NewsExplorer";
-import { listNews, countNews } from "../lib/server/news";
+import { listNews, getStats } from "../lib/server/news";
 import { loadSources } from "../lib/server/sources";
 import { startScheduler } from "../lib/server/scheduler";
 
@@ -10,16 +10,17 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" }
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   // 确保调度器启动
   startScheduler();
 
-  const [news, sources, totalNews] = await Promise.all([
+  const [news, sources, stats] = await Promise.all([
     Promise.resolve(listNews({ limit: 30 })),
     Promise.resolve(loadSources()),
-    Promise.resolve(countNews())
+    Promise.resolve(getStats())
   ]);
-  const stats = { total_news: totalNews };
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const websiteSchema = {
     "@context": "https://schema.org",

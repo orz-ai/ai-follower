@@ -1,6 +1,6 @@
 import "server-only";
 
-import { getDb } from "./db";
+import { getDb, getMeta } from "./db";
 import type { NewsItem, NewsInput } from "../types";
 
 export type { NewsItem, NewsInput };
@@ -99,4 +99,11 @@ export function countNews() {
     total: number;
   };
   return row?.total ?? 0;
+}
+
+export function getStats() {
+  return {
+    total_news: countNews(),
+    last_collected_at: getMeta("last_collect_finished_at")
+  };
 }

@@ -4,6 +4,7 @@ import { listNews } from "../../../lib/server/news";
 import { startScheduler } from "../../../lib/server/scheduler";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
@@ -19,5 +20,9 @@ export async function GET(request: Request) {
   const offset = Math.max(Number(searchParams.get("offset") || 0), 0);
 
   const data = listNews({ q, source, language, limit, offset });
-  return NextResponse.json(data);
+  return NextResponse.json(data, {
+    headers: {
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate"
+    }
+  });
 }

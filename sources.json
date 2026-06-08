@@ -56,6 +56,20 @@
     "enabled": true
   },
   {
+    "name": "Together AI Blog",
+    "url": "https://www.together.ai/blog/rss.xml",
+    "language": "en",
+    "category": "official",
+    "enabled": true
+  },
+  {
+    "name": "Ollama Blog",
+    "url": "https://ollama.com/blog/rss.xml",
+    "language": "en",
+    "category": "official",
+    "enabled": true
+  },
+  {
     "name": "TechCrunch AI",
     "url": "https://techcrunch.com/tag/artificial-intelligence/feed/",
     "language": "en",
@@ -72,6 +86,13 @@
   {
     "name": "Wired AI",
     "url": "https://www.wired.com/feed/tag/ai/latest/rss",
+    "language": "en",
+    "category": "media",
+    "enabled": true
+  },
+  {
+    "name": "MarkTechPost",
+    "url": "https://www.marktechpost.com/feed/",
     "language": "en",
     "category": "media",
     "enabled": true
@@ -107,6 +128,13 @@
   {
     "name": "BAIR Blog",
     "url": "https://bair.berkeley.edu/blog/feed.xml",
+    "language": "en",
+    "category": "research",
+    "enabled": true
+  },
+  {
+    "name": "MIT News AI",
+    "url": "https://news.mit.edu/rss/topic/artificial-intelligence2",
     "language": "en",
     "category": "research",
     "enabled": true

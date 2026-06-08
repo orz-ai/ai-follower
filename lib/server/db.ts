@@ -21,6 +21,10 @@ CREATE TABLE IF NOT EXISTS news (
 );
 CREATE INDEX IF NOT EXISTS idx_news_published_at ON news(published_at);
 CREATE INDEX IF NOT EXISTS idx_news_source ON news(source);
+CREATE TABLE IF NOT EXISTS app_meta (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL
+);
 `;
 
 let db: Database.Database | null = null;
@@ -40,4 +44,25 @@ export function getDb() {
     db.exec(SCHEMA);
   }
   return db;
+}
+
+export function getMeta(key: string) {
+  const database = getDb();
+  const row = database
+    .prepare("SELECT value FROM app_meta WHERE key = ?")
+    .get(key) as { value: string } | undefined;
+  return row?.value ?? null;
+}
+
+export function setMeta(key: string, value: string) {
+  const database = getDb();
+  database
+    .prepare(
+      `
+      INSERT INTO app_meta (key, value)
+      VALUES (?, ?)
+      ON CONFLICT(key) DO UPDATE SET value = excluded.value
+      `
+    )
+    .run(key, value);
 }

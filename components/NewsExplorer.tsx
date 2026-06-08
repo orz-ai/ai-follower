@@ -35,7 +35,6 @@ export default function NewsExplorer({
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
   const [liveStats, setLiveStats] = useState<Stats | null>(stats);
   const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -80,7 +79,6 @@ export default function NewsExplorer({
       }
       setNews(data);
       setIsLoading(false);
-      setUpdatedAt(new Date().toISOString());
       setHasMore(data.length === DEFAULT_LIMIT);
     }, 350);
 
@@ -206,9 +204,9 @@ export default function NewsExplorer({
           >
             {isLoading ? "刷新中" : "数据已同步"}
           </span>
-          {updatedAt && (
+          {liveStats?.last_collected_at && (
             <span>
-              最近刷新: {formatDate(updatedAt)}
+              最近采集完成: {formatDate(liveStats.last_collected_at)}
             </span>
           )}
           {error && <span className="text-coral">{error}</span>}
